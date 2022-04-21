@@ -1,0 +1,231 @@
+/*
+    Theme Name: Sukidesuost
+    Author: BayuDC
+    Version: 0.1 alpha
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1280px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr;
+    grid-template-areas: 'header header' 'main sidebar' 'footer footer';
+    gap: 40px;
+}
+
+header {
+    padding: 10px 20px;
+    background: #212121;
+    grid-area: header;
+}
+header a {
+    color: #f5f5f5;
+    transition: 0.3s;
+}
+header a:hover {
+    text-shadow: 0 0 5px #ffffff;
+}
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+header nav li {
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+header nav li:nth-last-child() {
+    padding-right: 0;
+}
+main {
+    grid-area: main;
+    display: grid;
+    gap: 20px;
+}
+footer {
+    padding: 40px 20px;
+    background: #212121;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    grid-area: footer;
+}
+footer a {
+    color: #f5f5f5;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer p {
+    font-size: 14px;
+}
+footer nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+footer nav li {
+    padding-left: 10px;
+}
+footer nav li:first-child {
+    padding-left: 0;
+}
+aside {
+    grid-area: sidebar;
+}
+aside > ul > li {
+    margin-bottom: 20px;
+}
+aside > ul > li ul > li {
+    margin: 2px 6px;
+}
+aside a {
+    color: #212121;
+    font-weight: 500;
+}
+aside a:hover {
+    text-decoration: underline;
+}
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+.posts .card .head {
+    position: relative;
+}
+.posts .card .img {
+    width: 100%;
+    display: block;
+}
+.posts .card .tag {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: rgb(255, 44, 44);
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+.posts .card .body {
+    padding: 10px;
+    background: #f2f2f2;
+}
+.posts .card .title {
+    font-weight: bold;
+}
+.posts .card .title a {
+    color: #212121;
+}
+.posts .card .date {
+    font-size: 14px;
+    margin-top: 5px;
+}
+.posts .card {
+    transition: 0.3s;
+}
+.posts .card:hover {
+    transform: scale(1.05);
+}
+.post .thumbnail {
+    padding-top: 20px;
+    text-align: center;
+}
+.post .thumbnail img {
+    max-width: 400px;
+    width: 100%;
+}
+.post .content {
+    padding: 20px 0;
+    font-weight: 500;
+}
+.post p {
+    margin: 10px 0;
+}
+.post blockquote {
+    background: #f2f2f2;
+    padding: 10px;
+}
+.post blockquote p {
+    margin: 0;
+}
+.post a {
+    color: rgb(44, 143, 255);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.post .info a {
+    margin-left: 5px;
+}
+.post .info a:first-child {
+    margin-left: 0;
+}
+.post .tags a {
+    padding: 5px 10px;
+    background: rgb(255, 44, 44);
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 2px;
+}
+.pagination .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.pagination .nav-links * {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px #212121 solid;
+}
+@media (max-width: 1280px) {
+    main {
+        margin-left: 20px;
+    }
+    aside {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 768px) {
+    main {
+        margin-right: 20px;
+    }
+    aside {
+        margin-left: 20px;
+    }
+    header {
+        text-align: center;
+    }
+    header nav ul {
+        justify-content: center;
+    }
+    footer {
+        flex-direction: column-reverse;
+    }
+    footer nav {
+        margin-bottom: 30px;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'header' 'main' 'sidebar' 'footer';
+    }
+}
+@media (max-width: 600px) {
+    footer nav ul {
+        flex-direction: column;
+    }
+    footer nav li {
+        padding: 0 0 10px 0;
+    }
+}
